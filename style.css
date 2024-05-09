@@ -5,20 +5,51 @@ td, th {
     border: 1px solid;
     text-align: center;
     border-radius: 10%;
-    width: 100px;
+    width: 125px;
+    transition: 0.5s;
+    font-size: 15px;
 }
 tr {
-    height: 100px;
+    height: 125px;
 }
 td:hover {
     cursor: pointer;
     background-color: #ed933980;
+    font-size: 16px;    
     transition: 0.5s;
 }
 table {
-    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
-body {
+body, html {
+    height: 100%;
     background-image: linear-gradient(rgb(211, 151, 161), rgb(153, 153, 212));
+    height: 100%;
+    width: 100%;
+    margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#input-container {
+    margin: auto;
+}
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#generate-button {
+    border-radius: 20px;
+    width: 200px;
+    height: 100px;
+    border: 0px;
+    background-color: #ed933980;
+    font-size: 20px;
+    transition: 0.5s;
+}
+#generate-button:hover {
+    background-color: #ed9339;
+    font-size: 21px;
+    cursor: pointer;
+    transition: 0.5s;
 }

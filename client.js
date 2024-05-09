@@ -48,23 +48,27 @@ const pick_random_item_from_array = (array_specified) => {
 }
 
 const on_board_click = (element) => {
+    const COVERED_BACKGROUND_COLOR = "#ed9339"
+    const UNVOVERED_BACKGROUND_COLOR = ""
     if (element.style.backgroundColor == "") {
-        element.style.backgroundColor = "#ed9339"
+        element.style.backgroundColor = COVERED_BACKGROUND_COLOR
         element.className = "covered"
     } else {
-        element.style.backgroundColor = ""
+        element.style.backgroundColor = UNVOVERED_BACKGROUND_COLOR
         element.className = "uncovered"
     }
 }
 
 
-const generateBoard = (board) => {
+const generateBoard = (board, board_length) => {
     const table_base = document.getElementById("bingo table")
-    const board_length = Math.sqrt(board.length)
+
+    document.getElementById("board-title").innerHTML = `${board_length}x${board_length} Straight Line Mission Bingo board`
 
     for (row=0; row<board_length; row++) {
         const row_elem = document.createElement("tr")
         table_base.appendChild(row_elem)
+
         for (col=0; col<board_length; col++) {
             const col_elem = document.createElement("td")
 
@@ -78,4 +82,14 @@ const generateBoard = (board) => {
     }
 }
 
-generateBoard(bingo_items)
+const onGenerateClick = () => {
+    const MIN_BOARD_SIZE = 1
+    const MAX_BOARD_SIZE = 5
+    const size = Number(document.getElementById("board-size").value)
+    if (size >= MIN_BOARD_SIZE && size <= MAX_BOARD_SIZE && Number.isInteger(size)) {
+        document.getElementById("pre-generation-container").remove()
+        generateBoard(bingo_items, size)
+    } else {
+        document.getElementById("output-text").innerHTML = `The number you entered did not meet the requirements. The board size must be an integer between ${MIN_BOARD_SIZE} and ${MAX_BOARD_SIZE}. Please try again!`
+    }
+}

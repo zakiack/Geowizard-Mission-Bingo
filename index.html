@@ -7,9 +7,21 @@
         <title>Staight Line Bingo</title>
     </head>
     <body>
-        <h1 class="text">Straight Line Mission Bingo</h1>
-        <h2 class="text">By Zak</h2>
-        <table align="center" id="bingo table"></table>
+        <div id="pre-generation-container">
+            <h1 class="text">Straight Line Mission Bingo</h1>
+            <h2 class="text">By Zak</h2>
+            <div align="center" id="input-container">
+                <p id="output-text">Enter the board size you would like to play with <br>A square board with the inputted side length will be generated</p>
+                <input type="number" min="0" max="5" id="board-size" value="5"></input>
+                <br>
+                <br>
+                <button id="generate-button" onclick="onGenerateClick()">Generate</button>
+            </div>
+        </div>
+        <h1 align="center" id="board-title"></h1>
+        <div id="wrapper">
+            <table id="bingo table"></table>
+        </div>
         <script src="client.js"></script>
     </body>
 </html>
