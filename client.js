@@ -48,14 +48,12 @@ const pick_random_item_from_array = (array_specified) => {
 }
 
 const on_board_click = (element) => {
-    if (element.className == "uncovered") {
+    if (element.style.backgroundColor == "") {
+        element.style.backgroundColor = "#ed9339"
         element.className = "covered"
-        element.style.color = "white"
-        element.style.backgroundColor = "black"
     } else {
+        element.style.backgroundColor = ""
         element.className = "uncovered"
-        element.style.color = "black"
-        element.style.backgroundColor = "white"
     }
 }
 
@@ -73,8 +71,6 @@ const generateBoard = (board) => {
             col_elem.className = "uncovered"
 
             col_elem.setAttribute('onclick', 'on_board_click(this)')
-            //col_elem.width = "10%"
-            //col_elem.height = "10%"
             const board_data = pick_random_item_from_array(board)
             col_elem.innerHTML = board_data
             row_elem.appendChild(col_elem)

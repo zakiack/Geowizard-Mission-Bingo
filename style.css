@@ -1,26 +1,24 @@
 .text {
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-table, td, th {
+td, th {
     border: 1px solid;
     text-align: center;
+    border-radius: 10%;
+    width: 100px;
 }
 tr {
     height: 100px;
 }
 td:hover {
     cursor: pointer;
+    background-color: #ed933980;
+    transition: 0.5s;
 }
 table {
     width: 60%;
-    border-collapse: collapse;
 }
-.cover {
-    background-color: black;
-    color: white;
-}
-.uncovered {
-    background-color: white;
-    color: black;
+body {
+    background-image: linear-gradient(rgb(211, 151, 161), rgb(153, 153, 212));
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
