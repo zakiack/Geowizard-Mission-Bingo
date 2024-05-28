@@ -34,7 +34,9 @@ bingo_items = [
     "Safety of the Forest",
     "Intense Chase",
     "Huge hedgerow",
-    "Sleeping in the car" 
+    "Sleeping in the car",
+    "Tractor getting really close",
+    "Insane coincidence"
 ]
 
 const pick_random_item_from_array = (array_specified) => {
